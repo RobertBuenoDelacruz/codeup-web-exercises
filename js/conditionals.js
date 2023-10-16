@@ -104,7 +104,7 @@ function calculateTotal(luckyNumber, total) {
     if (luckyNumber === 5) {
         return 0
     } else if (luckyNumber === 4) {
-        return (total * .5)
+        return total * .5
     } else if (luckyNumber === 3) {
         return (total * .35)
     } else if (luckyNumber === 2) {
@@ -124,7 +124,9 @@ console.log(calculateTotal(4, 100))
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// const luckyNumber = Math.floor(Math.random() * 6);
+const luckyNumber = Math.floor(Math.random() * 6);
+let totalBill = prompt(calculateTotal(luckyNumber))
+console.log(totalBill)
 
 /**
  * TODO:
