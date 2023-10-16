@@ -8,11 +8,11 @@
  * Example
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
-function sayHello(firstName){
-    return "Hello, " + firstName
+function sayHello(name){
+    return "Hello, " + name
 }
 
-// console.log(sayHello("Robert"))
+console.log(sayHello("Robert"))
 
 /**
  * TODO:
@@ -22,8 +22,7 @@ function sayHello(firstName){
  * console.log 'helloMessage' to check your work
  */
 let helloMessage = sayHello("Robert")
-// console.log(helloMessage)
-
+console.log(helloMessage)
 
 /**
  * TODO:
@@ -85,7 +84,7 @@ console.log(calculateTip(0.15, 20))
 let tipAmount = prompt("What percentage would you like to tip?")
 let billAmount = prompt("What is your bill amount?")
 let amountToBeTipped = calculateTip(tipAmount, billAmount)
-alert(`Your total tip is ${amountToBeTipped}`)
+alert(`Your total tip is $${amountToBeTipped}`)
 
 
 /**
