@@ -25,3 +25,9 @@ const capitalizeFirstLetter = (str) => {
     return capitalizedFirstLetter + restOfWord;
 }
 console.log(capitalizeFirstLetter("testString"));
+
+function largestNum(num1, num2, num3){
+    return Math.max(num1, num2, num3)
+}
+
+console.log(largestNum(1, 2, 3))
