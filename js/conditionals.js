@@ -104,17 +104,21 @@ function calculateTotal(luckyNumber, total) {
     if (luckyNumber === 5) {
         return 0
     } else if (luckyNumber === 4) {
-        return total * .5
+        let discountAmount = total * .5
+        return total - discountAmount
     } else if (luckyNumber === 3) {
-        return (total * .35)
+        let discountAmount = total * .35
+        return total - discountAmount
     } else if (luckyNumber === 2) {
-        return total * .25
+        let discountAmount = total * .25
+        return total - discountAmount
     } else if (luckyNumber === 1) {
-        return total * .1
+        let discountAmount = total * .10
+        return total - discountAmount
     }
 }
 
-console.log(calculateTotal(4, 100))
+console.log(calculateTotal(2, 100))
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -124,9 +128,17 @@ console.log(calculateTotal(4, 100))
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
+    //List:
+    //1. Prompt the user for totalBill DONE
+    //2. Use calculateTotal
+    //3. Alert what their lucky number is
+    //4. Price before the discount
+    //5. Price after the discount
 const luckyNumber = Math.floor(Math.random() * 6);
-let totalBill = prompt(calculateTotal(luckyNumber))
-console.log(totalBill)
+let totalBill = prompt("What was the total for your bill?")
+totalBill = parseFloat(totalBill).toFixed(2)
+let finalAmount = calculateTotal(luckyNumber, totalBill)
+alert("Your final amount was $" + finalAmount.toFixed(2) + `, your lucky number was ${luckyNumber}, and your price before was $${totalBill}`)
 
 /**
  * TODO:
@@ -146,3 +158,22 @@ console.log(totalBill)
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+let wantsNumber = confirm("Would you like to enter a number?")
+if(wantsNumber) {
+    let num = parseFloat(prompt("Enter a number"))
+    if(isNaN(num)) {
+        alert("Your input was not a number")
+    } else {
+        if (num % 2 === 0) {
+            alert("Your number is even")
+        } else if (num % 2 !== 0) {
+            alert("Your number is odd")
+        }
+        alert("Your number is " + (num + 100))
+        if (num > 0) {
+            alert("Your number is positive")
+        } else {
+            alert("Your number is negative")
+        }
+    }
+}
