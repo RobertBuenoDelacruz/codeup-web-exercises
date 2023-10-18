@@ -36,7 +36,7 @@ function analyzeColor(colorStr) {
 }
 
 // function call
-// console.log(analyzeColor("purple"));
+console.log(analyzeColor("purple"));
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -76,7 +76,7 @@ switch(randomColor) {
  * function to show it to the user.
  */
 
-// let userInput = prompt ("Enter a color")
+// let userInput = prompt("Enter a color")
 // alert(analyzeColor(userInput))
 
 /* ########################################################################## */
@@ -115,6 +115,9 @@ function calculateTotal(luckyNumber, total) {
     } else if (luckyNumber === 1) {
         let discountAmount = total * .10
         return total - discountAmount
+    } else if (luckyNumber === 0) {
+        let discountAmount = 0
+        return total - discountAmount
     }
 }
 
@@ -135,10 +138,13 @@ console.log(calculateTotal(2, 100))
     //4. Price before the discount
     //5. Price after the discount
 const luckyNumber = Math.floor(Math.random() * 6);
+
 let totalBill = prompt("What was the total for your bill?")
 totalBill = parseFloat(totalBill).toFixed(2)
 let finalAmount = calculateTotal(luckyNumber, totalBill)
-alert("Your final amount was $" + finalAmount.toFixed(2) + `, your lucky number was ${luckyNumber}, and your price before was $${totalBill}`)
+alert("Your final amount was $"
+    + finalAmount.toFixed(2)
+    + `, your lucky number was ${luckyNumber}, and your price before was $${totalBill}`)
 
 /**
  * TODO:
