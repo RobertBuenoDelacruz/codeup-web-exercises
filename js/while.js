@@ -42,31 +42,36 @@
 // }
 
 //Break (this console.log will never be reached since it is outside of the for loop, after the break
-for(let i = 0; i < 100; i += 5) {
-    console.log(i)
-    break;
-    console.log("snippet never reached");
-}
+// for(let i = 0; i < 100; i += 5) {
+//     console.log(i)
+//     break;
+//     console.log("snippet never reached");
+// }
+//
+// for(let i = 0; i < 100; i += 5) {
+//     console.log(i)
+//     if(i === 50) {
+//         break;
+//     }
+// }
+// console.log("Trying to break out of the loop")
+//
+// // continue
+// for (let i = 1; i <= 5; i++) {
+//     if(i === 3) {
+//         continue;
+//     }
+//     console.log(i)
+// }
+//
+// for(let i = 1; i < 100; i++) {
+//     if (i % 2 === 0) {
+//         continue;
+//     }
+//     console.log(i);
+// }
 
-for(let i = 0; i < 100; i += 5) {
-    console.log(i)
-    if(i === 50) {
-        break;
-    }
-}
-console.log("Trying to break out of the loop")
-
-// continue
-for (let i = 1; i <= 5; i++) {
-    if(i === 3) {
-        continue;
-    }
-    console.log(i)
-}
-
-for(let i = 1; i < 100; i++) {
-    if (i % 2 === 0) {
-        continue;
-    }
+let i = 10
+while(i < 10) {
     console.log(i);
 }

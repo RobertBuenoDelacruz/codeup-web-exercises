@@ -1,10 +1,10 @@
 
-// function showMultiplicationTable(num) {
-//     for(let i = 1; i <= 10; ++i) {
-//         console.log(`${num} * ${i} = ${num * i}`);
-//     }
-// }
-// showMultiplicationTable(8);
+function showMultiplicationTable(num) {
+    for(let i = 1; i <= 10; ++i) {
+        console.log(`${num} x ${i} = ${num * i}`);
+    }
+}
+showMultiplicationTable(7);
 
 for(let i = 0; i < 10; i++) {
     let randomNum = Math.floor(Math.random() * 180) + 20;
@@ -19,3 +19,5 @@ for(let i = 1; i <= 9; i++) {
 for(let i = 100; i >= 5; i -= 5) {
     console.log(i)
 }
+
+

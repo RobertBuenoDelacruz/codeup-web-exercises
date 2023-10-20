@@ -43,3 +43,14 @@ while(num >= 5) {
     }
     num -= 5
 }
+
+//------------------Warm up 9/20---------------------
+function returnEvenNums() { //------------ function declaration
+    for(let i = 1; i <= 100; i++){ //--- for loop
+        if(i % 2 === 0){ //---------------------- if statement
+            console.log(i);
+        }
+    }
+}
+
+returnEvenNums();
