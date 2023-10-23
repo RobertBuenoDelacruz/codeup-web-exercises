@@ -54,3 +54,9 @@ function returnEvenNums() { //------------ function declaration
 }
 
 returnEvenNums();
+//--------------- Warm up 10/23------------------
+let favoriteMovies = ["Interstellar", "Wolf of Wallstreet", "Endgame", "Jumper", "Far From Home"];
+
+favoriteMovies.sort()
+favoriteMovies.forEach((movies) => console.log(movies))
+
