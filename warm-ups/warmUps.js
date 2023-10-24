@@ -60,3 +60,19 @@ let favoriteMovies = ["Interstellar", "Wolf of Wallstreet", "Endgame", "Jumper",
 favoriteMovies.sort()
 favoriteMovies.forEach((movies) => console.log(movies))
 
+//------------ Warm up 10/24------------
+
+const cars = [
+    {
+        make: "Honda",
+        model: "Civic",
+        color: "Black"
+    },
+    {
+        make: "Nissan",
+        model: "370z",
+        color: "Black"
+    }
+];
+
+cars.forEach(car => console.log(`${car.make} ${car.model} ${car.color}`))
