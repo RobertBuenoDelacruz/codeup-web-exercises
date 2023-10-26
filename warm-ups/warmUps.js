@@ -74,5 +74,5 @@ const cars = [
         color: "Black"
     }
 ];
-
 cars.forEach(car => console.log(`${car.make} ${car.model} ${car.color}`))
+

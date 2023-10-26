@@ -5,6 +5,9 @@
         <title></title>
     </head>
     <body>
-
+        <h1>Ideal Web Development Job</h1>
+        <p>
+            My <strong>ideal web dev job</strong> would either be something remote or at least something close to home. Working for <em>J.P. Morgan</em> would be the company i would like to work for. Google, facebook, or amazon would be the dream but being realistic would be something like Chase or maybe working for a hospital within that field. Dream pay would be a six-figure income but knowing that this is my first tech job I probably wouldn't take anything less than $60k and progress from there.
+        </p>
     </body>
 </html>
