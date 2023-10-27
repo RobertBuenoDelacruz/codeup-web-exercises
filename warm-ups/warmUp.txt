@@ -9,5 +9,9 @@
         <p>
             My <strong>ideal web dev job</strong> would either be something remote or at least something close to home. Working for <em>J.P. Morgan</em> would be the company i would like to work for. Google, facebook, or amazon would be the dream but being realistic would be something like Chase or maybe working for a hospital within that field. Goal pay would be a six-figure income but knowing that this is my first tech job I probably wouldn't take anything less than $60k and progress from there.
         </p>
+        <p>
+            SMART goal. Specific, measurable, achievable, relevant, time-bound.
+            To be specific about my goal is to try and make 6 figures by mid 2025. I know this is all new to me and I need to have the mindset of "if i want to be better at something than doing and dedicating time to it is the only way to become better at that specific task". It might take more practice, maybe even jumping from job to job in order to go up the ladder in salary. Progression can come with minor set backs but for as long as I am trending in the incline position, I will achieve that SMART goal.
+        </p>
     </body>
 </html>
