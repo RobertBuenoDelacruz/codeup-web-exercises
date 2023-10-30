@@ -11,18 +11,12 @@ html {
     background-image: url("../img/clouds.avif");
     background-position: center;
     background-size: cover;
-
-}
-ul {
-    list-style: upper-roman;
-}
-
-body {
+    background-repeat: no-repeat;
     font-family: agbalumo, serif;
+
 }
-td {
-    font-size: larger;
-    border: 2px solid
+ol, ul {
+    list-style: square;
 }
 a:link {
     color: red;
@@ -36,6 +30,20 @@ a:hover {
 }
 a:active {
     color:green;
+}
+table {
+    font-size: 25px;
+    padding: 20px;
+    width: 100%;
+}
+th, td {
+    border: 2px solid red;
+    padding: 12px;
+    text-align: center;
+}
+h2 {
+    background-color: #333;
+    color: white;
 }
 
 
