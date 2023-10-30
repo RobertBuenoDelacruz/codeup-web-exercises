@@ -13,5 +13,16 @@
             SMART goal. Specific, measurable, achievable, relevant, time-bound.
             To be specific about my goal is to try and make 6 figures by mid 2025. I know this is all new to me and I need to have the mindset of "if i want to be better at something than doing and dedicating time to it is the only way to become better at that specific task". It might take more practice, maybe even jumping from job to job in order to go up the ladder in salary. Progression can come with minor set backs but for as long as I am trending in the incline position, I will achieve that SMART goal.
         </p>
+        <h1>Warm ups</h1>
+        <p>SMART goal. Specific, measurable, achievable, relevant, time-bound.
+           To be specific about my goal is to try and make 6 figures by mid 2025. I know this is all new to me and I need to have the mindset of "if i want to be better at something than doing and dedicating time to it is the only way to become better at that specific task". It might take more practice, maybe even jumping from job to job in order to go up the ladder in salary. Progression can come with minor set backs but for as long as I am trending in the incline position, I will achieve that SMART goal.
+        </p>
+        <ul>
+            <li>S: working for a great company that will help me and my family thrive</li>
+            <li>M: making 6 figures by the end of 2025 (around November or December of that year</li>
+            <li>A: one step at a time so for things that are achievable I would code on my own time 1-2 hours a day to help me become better</li>
+            <li>R: </li>
+            <li>T: again, by the end of 2025 around November or December</li>
+        </ul>
     </body>
 </html>

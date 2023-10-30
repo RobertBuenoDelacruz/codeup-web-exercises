@@ -12,3 +12,17 @@ function sayHello(){
 sayHello()
 
 //testing for self practice
+
+//The Fortune Teller
+function tellFortune(numOfChildren, partnersName, geographicLocation, jobTitle) {
+    return `I will be a ${jobTitle} in ${geographicLocation}, and married to ${partnersName} with ${numOfChildren} children.`
+}
+
+console.log(tellFortune(3, 'Julie', 'London', 'Web Developer'))
+
+//The Puppy Age Calculator
+function calculateDogAge(age)  {
+    let dogYears = 7 * age
+    console.log("Your dog is " + dogYears + " years old in dog years!")
+}
+calculateDogAge(2)
