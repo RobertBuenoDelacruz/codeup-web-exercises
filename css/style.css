@@ -1,3 +1,41 @@
 .fancy-header {
-    color: purple;
+    text-align: center;
+    color: violet;
+    text-decoration: underline;
 }
+.subtitle {
+    text-align: center;
+}
+html {
+    background-color: ivory;
+    background-image: url("../img/clouds.avif");
+    background-position: center;
+    background-size: cover;
+
+}
+ul {
+    list-style: upper-roman;
+}
+
+body {
+    font-family: agbalumo, serif;
+}
+td {
+    font-size: larger;
+    border: 2px solid
+}
+a:link {
+    color: red;
+}
+a:visited {
+    color:black;
+}
+a:hover {
+    font-size: 20px;
+    color:blue;
+}
+a:active {
+    color:green;
+}
+
+
