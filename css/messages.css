@@ -13,11 +13,11 @@ div {
 }
 .message-info {
     background-color: #cdddff;
-    color: blue;
+    color: darkblue;
 }
 .message-success {
     background-color: #cff3da;
-    color: green;
+    color: darkgreen;
 }
 .message-warning {
     background-color: #fcfbc9;
@@ -25,5 +25,5 @@ div {
 }
 .message-error {
     background-color: #fad2d6;
-    color: red;
+    color: darkred;
 }
