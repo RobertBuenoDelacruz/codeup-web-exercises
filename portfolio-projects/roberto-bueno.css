@@ -1,0 +1,17 @@
+html {
+    background-color: #606060;
+}
+.title {
+    font-family: caveat, sans-serif;
+    color: #202124;
+    font-size: 400%;
+    text-align: right;
+    padding: 0 30px;
+}
+#one {
+    margin: 0 30px;
+    text-align: right;
+    font-family: nunito, sans-serif;
+    background-color: ivory;
+    padding: 15px;
+}

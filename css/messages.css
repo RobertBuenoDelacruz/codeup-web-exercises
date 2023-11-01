@@ -11,19 +11,47 @@ div {
     border: 1px solid lightgrey;
     border-radius: 5px;
 }
+/*.message-info {*/
+/*    background-color: #cdddff;*/
+/*    color: darkblue;*/
+/*}*/
+/*.message-success {*/
+/*    background-color: #cff3da;*/
+/*    color: darkgreen;*/
+/*}*/
+/*.message-warning {*/
+/*    background-color: #fcfbc9;*/
+/*    color: darkorange;*/
+/*}*/
+/*.message-error {*/
+/*    background-color: #fad2d6;*/
+/*    color: darkred;*/
+/*}*/
+
+:root {
+    --text-info: darkblue;
+    --bg-info: #cdddff;
+    --text-success: darkgreen;
+    --bg-success: #cff3da;
+    --text-warning: darkorange;
+    --bg-warning: #fcfbc9;
+    --text-error: darkred;
+    --bg-error: #fad2d6;
+}
+
 .message-info {
-    background-color: #cdddff;
-    color: darkblue;
+    background-color: var(--bg-info);
+    color: var(--text-info);
 }
 .message-success {
-    background-color: #cff3da;
-    color: darkgreen;
+    background-color: var(--bg-success);
+    color: var(--text-success);
 }
 .message-warning {
-    background-color: #fcfbc9;
-    color: darkorange;
+    background-color: var(--bg-warning);
+    color: var(--text-warning);
 }
 .message-error {
-    background-color: #fad2d6;
-    color: darkred;
+    background-color: var(--bg-error);
+    color: var(--text-error);
 }
