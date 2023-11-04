@@ -1,3 +1,13 @@
 nav {
-    list-style-type: none;
+    background-color: #c1c1c1;
+    display: inline;
+
+    margin: 0;
+    padding: 0;
+}
+ul {
+    text-align: center;
+}
+li {
+    display: inline;
 }

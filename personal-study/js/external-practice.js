@@ -26,3 +26,20 @@ function calculateDogAge(age)  {
     console.log("Your dog is " + dogYears + " years old in dog years!")
 }
 calculateDogAge(2)
+//-----------Weekly Workouts-----------
+let workOuts = [{
+    Monday: "Shoulders and Arms",
+    Tuesday: "Legs",
+    Wednesday: "Chest and Tri",
+    Thursday: "Legs and Shoulders",
+    Friday: "Back and Bi",
+    Saturday: "REST",
+    Sunday: "REST"
+}]
+
+function weeklyWorkouts(arrDayOfTheWeek) {
+    for(let i = 0; i < arrDayOfTheWeek.length; i++) {
+        console.log(workOuts)
+    }
+}
+weeklyWorkouts("Monday")
