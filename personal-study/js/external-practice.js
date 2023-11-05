@@ -43,6 +43,6 @@ let workOuts = {
 function weeklyWorkouts(arrDayOfTheWeek) {
     return workOuts[arrDayOfTheWeek] || "There are no workouts scheduled for today."
 }
-let day = "tuesday";
+let day = "sunday";
 let result = weeklyWorkouts(day);
 console.log(result);
