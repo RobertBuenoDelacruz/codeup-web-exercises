@@ -1,0 +1,24 @@
+.jumbotron {
+    background-image: url("../img/pizza.png");
+    height: 346px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.Welcome {
+    background-color: white;
+    flex-direction: column;
+    text-align: center;
+    opacity: 70%;
+    align-items: center;
+    position: relative;
+    top: 4.5em;
+}
+.badge {
+    border-radius: 50%;
+}
+.title-card {
+    padding: 10px;
+    background-color: blue;
+    color: white;
+
+}
