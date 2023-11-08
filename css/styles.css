@@ -42,13 +42,18 @@ input {
 }
 .wavy-lines-2 {
     position: absolute;
-
+    top: 25em;
+    right: .5em;
 }
 .dots-1 {
     position: absolute;
+    top: 25em;
+    left: 6em;
 }
 .dots-2 {
     position: absolute;
+    top: 0;
+    right: 6.5em;
 }
 input:placeholder {
     color: #ABAFB3;
