@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // console.log(innerWidth)
+    // console.log(innerHeight)
+
+    // confirm("Would you like to continue?")
+    let count = 0;
+    let max = 10;
+    let interval = 1000; // intervals are passed in milliseconds
+//SetInterval**********************
+    const intervalId = setInterval( () => {
+        if (count >= max) {
+            clearInterval(intervalId);
+            console.log("All done");
+            location.reload(); //RELOAD METHOD
+        } else {
+            count++;
+            console.log("Repeating this line " + count);
+        }
+    }, interval)
+    //---------Creating a regular function-------------
+    // let intervalId = setInterval(function () {
+    //     if (count >= max) {
+    //         clearInterval(intervalId);
+    //         console.log("All done");
+    //     } else {
+    //         count++;
+    //         console.log("Repeating this line " + count);
+    //     }
+    // }, interval) //or use 1000 for 1 second instead of interval
+//SetTimeOut***********************
+    const delay = 5000; // delay time in milliseconds
+
+    // const timeoutId = setTimeout(() => alert('Here is a delayed hello!'), delay);
+
+    // let timeoutId = setTimeout(function () {
+    //     alert("Here is a delayed hello!")
+    //     location = "https://codeup-curriculum.web.app/curriculum/java/3.0.1/javascript-2/bom"
+    // }, 3000)
+
+    // clearTimeout(timeoutId) This is commented out to show the "location" method
+
+    // to cancel the timeout, you can call
+    // clearTimeout(timeoutId);
+    // prior to the delay expiring
+</script>
+
+</body>
+</html>
