@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Example</title>
+</head>
+<body>
+
+<!--    <h1 id="myHeading">Hello there!</h1>-->
+<!--    <button onclick="changeText()">Click me</button>-->
+
+<!--    <script>-->
+<!--      function changeText() {-->
+<!--        let heading = document.getElementById('myHeading');-->
+<!--        heading.innerHTML = 'Whoa! Why did you do that?';-->
+<!--      }-->
+<!--    </script>-->
+
+    <p class="changeable">This is the first paragraph for this exercise!</p>
+    <p class="changeable">Ok, this is paragraph number two!</p>
+    <button onclick="changeText()">Change Text</button>
+    <script>
+        function changeText() {
+            let paragraphs = document.getElementsByClassName('changeable');
+            for (let i = 0; i < paragraphs.length; i++) {
+                paragraphs[i].innerHTML = 'After we created the function this is the new text after we run it!';
+            }
+        }
+    </script>
+
+</body>
+</html>
