@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+<script
+        src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+
+<script>
+    "use strict";
+
+    // $(document).keyup(function(event){
+    //     console.log(event.keyCode);
+    // });
+
+    let konamiCode = [37, 39, 37, 39, 38, 40, 38, 40, 66, 65, 13], n = 0;
+    let konamiExecuted = false;
+
+    $(document).keydown(function (e) {
+        if (e.keyCode === konamiCode[n++]) {
+            if (n === konamiCode.length) {
+                alert("10 HIT COMBO!");
+                konamiExecuted = true;
+                n = 0;
+                return false;
+                document.body.style.backgroundImage = "url('akuma.png')"
+            }
+        } else {
+            n = 0;
+        }
+    });
+
+    $(document).keydown(function (e) {
+        $('body').on("keydown", function(e){
+            var keycode = e.keyCode;
+
+            switch(keycode) {
+                case 38:
+                    $(this).css({'background':'blue'});
+                    $("#keySound")[0].play();
+                    break;
+
+                case 40:
+                    $(this).css({'background':'brown'});
+                    break;
+
+                case 37:
+                    $(this).css({'background':'cyan'});
+
+                    break;
+
+                case 39:
+                    $(this).css({'background':'navy'});
+                    break;
+
+                case 66:
+                    $(this).css({'background':'green'});
+                    break;
+
+                case 65:
+                    $(this).css({'background': 'red'});
+                    break;
+
+            }
+
+        });
+
+    });
+
+</script>
+</body>
+</html>
