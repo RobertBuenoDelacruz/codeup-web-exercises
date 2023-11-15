@@ -54,6 +54,18 @@
         // }
         // changeFontColor()
 
+        function startChange() {
+            const colors = ['yellow', 'blue', 'green', 'red', 'purple'];
+            let index = 0
+            const intervalId = setInterval(() => {
+                index += 1 % colors.length;
+                document.body.style.backgroundColor = colors[index];
+            }, 2000);
+            setTimeout(() => {
+                clearInterval(intervalId)
+            }, 10000);
+        }
+        document.getElementById('toggle-btn').addEventListener('click', startChange);
 
 
 
