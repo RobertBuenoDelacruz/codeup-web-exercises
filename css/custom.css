@@ -1,24 +1,54 @@
-.jumbotron {
-    background-image: url("../img/pizza.png");
-    height: 346px;
-    background-size: cover;
-    background-repeat: no-repeat;
+.btn-outline-success {
+    border-color: grey;
+    color: grey;
 }
-.Welcome {
-    background-color: white;
-    flex-direction: column;
-    text-align: center;
-    opacity: 70%;
-    align-items: center;
-    position: relative;
-    top: 4.5em;
-}
-.badge {
+img {
     border-radius: 50%;
 }
-.title-card {
-    padding: 10px;
-    background-color: blue;
-    color: white;
+.btn-outline-success:hover {
+    background-color: grey;
+    border-color: grey;
+}
 
+.btn-outline-success:active {
+    color: grey;
+    border-color: grey;
+}
+
+#welcome-title{
+    background-color:rgba(255,255,255,0.7);
+    text-align:center;
+}
+
+#main-jumbo {
+    background-image: url("../img/pizza.png");
+    background-size: cover;
+}
+
+.card-header{
+    color:white;
+    text-align:left;
+}
+.card-footer{
+    text-align:right;
+}
+
+.list-group{
+    text-align:left;
+}
+
+.list-group .header{
+    background-color: #f7f7f7;
+}
+
+.custom-control{
+    padding-left:0;
+}
+
+.cheeses{
+    margin-bottom: 10px;
+}
+
+.meats{
+    margin-bottom: 10px;
 }
