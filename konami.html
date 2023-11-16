@@ -3,75 +3,27 @@
 <head>
     <title>Konami Code</title>
 </head>
-<body>
+<body id="body">
 <h1>Konami Code</h1>
-
-<script
-        src="https://code.jquery.com/jquery-2.2.4.min.js"
-        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-        crossorigin="anonymous"></script>
+<audio id="audio" src="sounds/go_go_power_rangers.mp3"></audio>
 
 <script>
     "use strict";
+    let num = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13]
+    let enteredNum = []
+    const audio = document.getElementById('audio');
 
-    // $(document).keyup(function(event){
-    //     console.log(event.keyCode);
-    // });
+    document.addEventListener("keyup", function(event) {
+        enteredNum.push(event.keyCode);
 
-    let konamiCode = [37, 39, 37, 39, 38, 40, 38, 40, 66, 65, 13], n = 0;
-    let konamiExecuted = false;
-
-    $(document).keydown(function (e) {
-        if (e.keyCode === konamiCode[n++]) {
-            if (n === konamiCode.length) {
-                alert("10 HIT COMBO!");
-                konamiExecuted = true;
-                n = 0;
-                return false;
-                document.body.style.backgroundImage = "url('akuma.png')"
+        if (enteredNum.length === num.length) {
+            for (let i = 0; i < num.length; i++) {
+                audio.play()
+                let backgroundColor = document.getElementById('body')
+                backgroundColor.style.backgroundColor = 'green'
             }
-        } else {
-            n = 0;
         }
-    });
-
-    $(document).keydown(function (e) {
-        $('body').on("keydown", function(e){
-            var keycode = e.keyCode;
-
-            switch(keycode) {
-                case 38:
-                    $(this).css({'background':'blue'});
-                    $("#keySound")[0].play();
-                    break;
-
-                case 40:
-                    $(this).css({'background':'brown'});
-                    break;
-
-                case 37:
-                    $(this).css({'background':'cyan'});
-
-                    break;
-
-                case 39:
-                    $(this).css({'background':'navy'});
-                    break;
-
-                case 66:
-                    $(this).css({'background':'green'});
-                    break;
-
-                case 65:
-                    $(this).css({'background': 'red'});
-                    break;
-
-            }
-
-        });
-
-    });
-
+    } );
 </script>
 </body>
 </html>
