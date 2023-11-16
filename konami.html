@@ -4,7 +4,7 @@
     <title>Konami Code</title>
 </head>
 <body id="body">
-<h1>Konami Code</h1>
+<h1><center>Konami Code</center></h1>
 <audio id="audio" src="sounds/go_go_power_rangers.mp3"></audio>
 
 <script>
@@ -14,15 +14,14 @@
     const audio = document.getElementById('audio');
 
     document.addEventListener("keyup", function(event) {
-        enteredNum.push(event.keyCode);
+        enteredNum.push(event.key);
 
         if (enteredNum.length === num.length) {
             for (let i = 0; i < num.length; i++) {
                 audio.play()
-                // let backgroundImg = document.getElementById('body')
-                // backgroundColor.style.backgroundColor = 'green'
                 document.body.style.backgroundImage = "url('img/power-rangers.jpeg')"
             }
+            alert('YOU GOT 30 EXTRA LIVES!!!')
         }
     } );
 </script>
