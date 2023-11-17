@@ -1,15 +1,37 @@
-document.getElementById('to-do-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+document.addEventListener('DOMContentLoaded', function () {
+    const todoForm = document.getElementById('to-do-form');
+    const todoInput = document.getElementById('to-do');
+    const todoList = document.getElementById('to-do-list');
 
-    const toDoInput = document.getElementById('to-do');
-    const toDoText = toDoInput.value.trim();
+    // Function to add a new to-do item
+    function addTodoItem(event) {
+        event.preventDefault(); // Prevent form submission
 
-    if (toDoText !== '') {
-        createToDoItem(toDoText);
-        toDoInput.value = '';
+        const todoText = todoInput.value.trim();
+
+        if (todoText !== '') {
+            const listItem = document.createElement('li');
+            listItem.classList.add('to-do-item', 'list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
+
+            const todoContent = document.createElement('p');
+            todoContent.classList.add('m-0');
+            todoContent.textContent = todoText;
+
+            const doneButton = document.createElement('button');
+            doneButton.classList.add('btn', 'btn-danger');
+            doneButton.textContent = 'Done';
+            doneButton.addEventListener('click', function () {
+                listItem.remove(); // Remove the clicked item
+            });
+
+            listItem.appendChild(todoContent);
+            listItem.appendChild(doneButton);
+
+            todoList.appendChild(listItem);
+
+            todoInput.value = ''; // Clear the input field
+        }
     }
-});
 
-function createToDoItem(text) {
-    const toDoList = document.getElementById('to-do-list')
-}
+    todoForm.addEventListener('submit', addTodoItem);
+});
