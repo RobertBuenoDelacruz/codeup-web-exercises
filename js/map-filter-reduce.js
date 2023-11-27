@@ -35,11 +35,11 @@ const users = [
         yearsOfExperience: 9
     }
 ];
-//**********.filter*******
+//**********(.filter)*******
 const moreThanThree = users.filter( users => users.languages.length >= 3);
 console.log(moreThanThree)
 
-//**********.map************
+//**********(.map)************
 //Example
 // const incremented = numbers.map( n => n + 1 );
 // console.log(incremented); // [2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
@@ -47,14 +47,18 @@ console.log(moreThanThree)
 const emailStr = users.map(users => users.email);
 console.log(emailStr)
 
-//********.reduce*********
+//********(.reduce)*********
 const totalYearsOfExperience = users.reduce((total, user) => total + user.yearsOfExperience, 0);
 const averageYearsOfExperience = totalYearsOfExperience / users.length;
 console.log("Total years:", totalYearsOfExperience);
 console.log("Average years:", averageYearsOfExperience);
 
-const longestEmail = users.reduce((longest, user) => {
-    return user.email.length > longest.length ? user.email : longest;
+const longestEmail = emailStr.reduce((longest, email) => {
+    if (email.length > longest.length) {
+        return email
+} else {
+    return longest
+    }
 }, '');
 console.log(longestEmail)
 
@@ -65,8 +69,6 @@ const instructorsList = users.reduce((name, user, index) => {
     return name + user.name + ", "
 }, 'Your instructors are: ');
 console.log( instructorsList)
-
-
 
 
 
