@@ -5,22 +5,25 @@
     <title>Title</title>
 </head>
 <body>
+    <p class="pokemon"></p>
+
   <script>
-    // fetch("https://pokeapi.co/api/v2/pokemon/rattata").then (response => {
-    //   return response.json();
-    // })
-    //         .then( height => {
-    //           console.log(height);
-    //         })
-    //         .then( weight => {
-    //           console.log(weight);
-    //         });
        fetch("https://pokeapi.co/api/v2/pokemon/rattata")
              .then(response => response.json())
              .then(data => console.log(data.height, data.weight)
             ) //this is waiting for this to be returned into json format
 
-
+    // Fetch Pokémon Image
+    const pokemonName = 'pikachu';
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
+        .then(response => response.json())
+        .then(data => {
+            const imageUrl = data.sprites.front_default;
+            const imgElement = document.createElement('img');
+            imgElement.src = imageUrl;
+            document.querySelector(".pokemon").appendChild(imgElement);
+        })
+        .catch(error => console.log(error));
   </script>
 
 </body>
