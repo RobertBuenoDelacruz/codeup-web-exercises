@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <script>
+    // fetch("https://pokeapi.co/api/v2/pokemon/rattata").then (response => {
+    //   return response.json();
+    // })
+    //         .then( height => {
+    //           console.log(height);
+    //         })
+    //         .then( weight => {
+    //           console.log(weight);
+    //         });
+       fetch("https://pokeapi.co/api/v2/pokemon/rattata")
+             .then(response => response.json())
+             .then(data => console.log(data.height, data.weight)
+            ) //this is waiting for this to be returned into json format
+
+
+  </script>
+
+</body>
+</html>

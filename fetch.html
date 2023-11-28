@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+</body>
+<script src="js/fetch.js">
+  // fetch(url, {headers: {'Authorization': "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"}})
+  // Octokit.js
+  // https://github.com/octokit/core.js#readme
+  const octokit = new Octokit({
+      auth: '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'
+  })
+
+  await octokit.request('GET /users/{username}/events/public', {
+      username: 'USERNAME',
+      headers: {
+          'X-GitHub-Api-Version': '2022-11-28'
+      }
+  })
+
+</script>
+</html>
