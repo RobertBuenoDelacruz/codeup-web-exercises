@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Mapbox Map</title>
+    <!-- Mapbox CSS -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
+<!--    <script src="js/mapbox-geocoder-utils.js"></script>-->
+
+    <style>
+        #map {
+            width: 100%;
+            height: 700px;
+        }
+
+        .title {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1 class="title">Here's my favorite Restaurant!</h1>
+    <div id='map'></div>
+        <script src="js/keys.js"></script>
+        <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+        <script>
+            mapboxgl.accessToken = MAPBOX_API;
+            const map = new mapboxgl.Map({
+                container: 'map', // container ID
+                style: 'mapbox://styles/mapbox/navigation-night-v1', // style URL
+                zoom: 9, // starting zoom
+                center: [-96.80327910801141, 33.10263639474709] // [lng, lat]
+            });
+
+            const marker = new mapboxgl.Marker()
+                .setLngLat([-96.80358102372185, 33.10263639474709])
+                .addTo(map);
+
+
+
+
+
+        </script>
+    </body>
+</html>

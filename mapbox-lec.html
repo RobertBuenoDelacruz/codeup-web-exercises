@@ -60,10 +60,11 @@
 
   marker.setPopup(codeupPopup);
 
+
   geocode("San Antonio", MAPBOX_API)
           .then(result => { console.log(result)
           map.setCenter(result);
-          map.setZoom(20);})
+          map.setZoom(10);})
 
   // reverse geocode method from mapbox-geocoder-utils.js
   reverseGeocode({lng: -98.4861, lat: 29.4260}, MAPBOX_API).
