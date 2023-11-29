@@ -41,8 +41,8 @@
         data.forEach(toDoPost => {
             const toDoLists = document.createElement('div')
             toDoLists.innerHTML = `
-            <ul>${toDoLists.title}</ul>
-            <ul>${toDoLists.content}</ul>
+            <ul>I have this to do: ${toDoPost.title}</ul>
+            <ul>I also have this to do as well ${toDoPost.content}</ul>
             `
 
             toDoList.appendChild(toDoLists)
