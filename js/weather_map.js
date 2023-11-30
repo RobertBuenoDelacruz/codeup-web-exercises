@@ -41,25 +41,33 @@ fetch(`https://api.openweathermap.org/data/2.5/forecast?` +
     `id=4726206` +
     `&appid=${OPEN_WEATHER_API}` + `&units=imperial`)
     .then( data => data.json())
-    .then(result => {
-        console.log(result)
+    .then(weatherData => {
+        const forecastData = weatherData.list;
 
-        const day = result.list;
+        const forecastCardsContainer = document.getElementById('weather-data');
+
+        const day = forecastData
+        console.log(day)
         for (let i = 0; i < day.length; i += 8) {
             const weather = day[i]
+            const dateTime = weather.dt_txt;
+            const date = new Date(dateTime);
 
-            const date = new Date(weather.dt * 1000);
-            console.log(date.toLocaleDateString());
+            const card = document.createElement('div');
+            card.classList.add('col-md-4', 'mb-3');
 
-            const time = document.createElement('div')
-            const temp = document.createElement('div')
+            card.innerHTML = `
+        <div class="card">
+          <div class="card-body">
+                <p class="card-text">Date: ${date.toDateString()}</p>
+                <p class="card-text">Humidity: ${weather.main.humidity}</p>
+                <p class="card-text">Temperature: ${weather.main.temp}</p>
+                <p class="card-text">Pressure: ${weather.main.pressure}</p>
+                <p class="card-text">Wind: ${weather.wind.speed}</p>
+          </div>
+        </div>
+      `;
 
-            time.innerText = date
-            temp.innerText = weather.main.temp;
-
-            weatherOutput.appendChild(time)
-            weatherOutput.appendChild(temp)
+            forecastCardsContainer.appendChild(card);
         }
     })
-
-

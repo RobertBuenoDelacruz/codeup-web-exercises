@@ -14,9 +14,13 @@
 
 .col-sm {
     padding: 10px;
-    margin: 20px
+    margin: 20px ;
 }
 
 div.row {
     margin-top: 30px
+}
+
+.card-body {
+     margin: auto;
 }
