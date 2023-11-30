@@ -7,7 +7,7 @@ fetch(`https://api.openweathermap.org/data/2.5/forecast?` +
     .then(result => {
         console.log(result)
 
-        result.list.forEach(weather => {
+        // result.list.forEach(weather => {
             // const date = new Date(weather.dt * 1000);
             // console.log(date.toLocaleDateString());
             // const time = document.createElement('p')
@@ -35,5 +35,5 @@ fetch(`https://api.openweathermap.org/data/2.5/forecast?` +
                 weatherOutput.appendChild(temp)
             }
 
-        })
+        // })
 })

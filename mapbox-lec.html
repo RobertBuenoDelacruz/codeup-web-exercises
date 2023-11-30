@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>First Mapbox Map</title>
   <!-- Mapbox CSS -->
-  <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet'/>
   <script src="js/mapbox-geocoder-utils.js"></script>
   <style>
   #map {
@@ -17,6 +17,11 @@
 <body>
 
 <h1>My First Mapbox Map!</h1>
+
+<label for="search"></label>
+<input type="text" id="search">
+<button id="sub" type="button">Search</button>
+
 
 <!-- The HTML element that serves as the Mapbox container -->
 <div id='map'></div>
@@ -70,6 +75,18 @@
   reverseGeocode({lng: -98.4861, lat: 29.4260}, MAPBOX_API).
   then( results => console.log(results) );
 
+  //Search functionality
+  document.getElementById("sub").addEventListener('click', function() {
+    let currentLocation = geocode(document.getElementById('search').value, MAPBOX_API)
+
+    currentLocation.then(result => {
+      console.log(result)
+      map.setCenter([result[0], result[1]])
+    })
+
+  })
+
 </script>
 </body>
+
 </html>
