@@ -1,3 +1,30 @@
+// Transition
+let intro = document.querySelector(".intro");
+// let logo = document.querySelector(".logo-header");
+let logoSpan = document.querySelectorAll(".logo")
+
+window.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+        logoSpan.forEach((span, idx) => {
+            setTimeout(() => {
+                span.classList.add("active")
+            }, (idx + 1) * 200)
+        });
+        setTimeout(() => {
+            logoSpan.forEach(() => {
+                setTimeout(() => {
+                    span.classList.remove("active")
+                    span.classList.add('fade');
+                }, (idx + 1) * 50)
+            })
+        }, 1800)
+        setTimeout(() => {
+            intro.style.top = "-100vh"
+        }, 1800)
+    })
+})
+
+
 // Creating Map
 mapboxgl.accessToken = MAPBOX_API;
 const map = new mapboxgl.Map({
@@ -6,6 +33,7 @@ const map = new mapboxgl.Map({
     zoom: 10,
     center: [-96.808891, 32.779167]
 });
+map.addControl(new mapboxgl.NavigationControl());
 
 // Creating Marker
 const marker = new mapboxgl.Marker()
@@ -19,8 +47,21 @@ document.getElementById("sub").addEventListener('click', function() {
     currentLocation.then(result => {
         console.log(result)
         map.setCenter([result[0], result[1]])
+        weatherCards(result[0], result[1])
+        let clearData = document.getElementById("weather-data")
+        clearData.innerHTML = ''
     })
 })
+
+// Populate city in "Current City"
+const currentCity = document.querySelector('button')
+const cityInput = document.querySelector('input')
+const cityName = document.querySelector('p')
+currentCity.addEventListener('click', () => {
+    const inputValue = cityInput.value
+    cityName.innerHTML = `<p> Current City: ${inputValue}</p>`
+})
+
 
 // Code for geocode
 function geocode(search, token) {
@@ -35,10 +76,8 @@ function geocode(search, token) {
 }
 
 //Code to get weather
-const weatherOutput = document.querySelector('#forecast')
-
-fetch(`https://api.openweathermap.org/data/2.5/forecast?` +
-    `id=4726206` +
+function weatherCards (lon, lat) {
+fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}` +
     `&appid=${OPEN_WEATHER_API}` + `&units=imperial`)
     .then( data => data.json())
     .then(weatherData => {
@@ -52,6 +91,8 @@ fetch(`https://api.openweathermap.org/data/2.5/forecast?` +
             const weather = day[i]
             const dateTime = weather.dt_txt;
             const date = new Date(dateTime);
+            // const icon =
+            console.log(weather)
 
             const card = document.createElement('div');
             card.classList.add('col-md-4', 'mb-3');
@@ -59,11 +100,12 @@ fetch(`https://api.openweathermap.org/data/2.5/forecast?` +
             card.innerHTML = `
         <div class="card">
           <div class="card-body">
-                <p class="card-text">Date: ${date.toDateString()}</p>
-                <p class="card-text">Humidity: ${weather.main.humidity}</p>
-                <p class="card-text">Temperature: ${weather.main.temp}</p>
-                <p class="card-text">Pressure: ${weather.main.pressure}</p>
-                <p class="card-text">Wind: ${weather.wind.speed}</p>
+                <p class="weather-icon"><img src="http://openweathermap.org/img/w/${weather.weather[0].icon}.png" /></p>
+                <p class="card-text"><strong>Date</strong>: ${date.toDateString()}</p>
+                <p class="card-text"><strong>Humidity</strong>: ${weather.main.humidity}</p>
+                <p class="card-text"><strong>Temperature</strong>: ${weather.main.temp}</p>
+                <p class="card-text"><strong>Pressure</strong>: ${weather.main.pressure}</p>
+                <p class="card-text"><strong>Wind</strong>: ${weather.wind.speed}</p>
           </div>
         </div>
       `;
@@ -71,3 +113,7 @@ fetch(`https://api.openweathermap.org/data/2.5/forecast?` +
             forecastCardsContainer.appendChild(card);
         }
     })
+}
+
+// Weather forecast for initialized location
+weatherCards(-108.19987247782704, 33.854132496836336)

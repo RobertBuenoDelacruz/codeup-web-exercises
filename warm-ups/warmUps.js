@@ -192,4 +192,25 @@ for (let i = 1; i <= 100; i++) {
     }
 }
 
+//---------- Hacker Rank Warm Up -----------
+
+function diagonalDifference(arr) {
+    // Write your code here
+    const primaryDiag = arr.map ((e, i) => e[i])
+        .reduce((mem, curr) => mem + curr, 0);
+    const secondaryDig = arr
+        .map ((e, i) => {
+            let index = arr.length - i -1;
+            return e[index];
+        })
+        .reduce((mem, curr) => mem + curr, 0);
+    return Math.abs(primaryDiag - secondaryDig)
+}
+
+console.log(diagonalDifference([
+                                      [ 11, 2, 4 ],
+                                      [ 4, 5, 6 ],
+                                      [ 10, 8, -12 ]
+                                    ]))
+
 
