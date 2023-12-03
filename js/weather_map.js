@@ -27,6 +27,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // Creating Map
 mapboxgl.accessToken = MAPBOX_API;
+
 const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/navigation-night-v1',
@@ -36,9 +37,19 @@ const map = new mapboxgl.Map({
 map.addControl(new mapboxgl.NavigationControl());
 
 // Creating Marker
-const marker = new mapboxgl.Marker()
-    .setLngLat([-96.808891, 32.779167])
-    .addTo(map)
+const marker = new mapboxgl.Marker({
+    draggable: true
+})
+    .setLngLat([0, 0]) //************
+    .addTo(map);
+
+function onDragEnd() {
+    const lnglat = marker.gtLngLat();
+    coordinates.style.display = 'block';
+    coordinates.innerHTML = `Longitude: ${lnglat.lng}
+        <br />Latitude: ${lnglat.lat}`;
+}
+marker.on('dragend', onDragEnd)
 
 //Search Function
 document.getElementById("sub").addEventListener('click', function() {
@@ -50,7 +61,25 @@ document.getElementById("sub").addEventListener('click', function() {
         weatherCards(result[0], result[1])
         let clearData = document.getElementById("weather-data")
         clearData.innerHTML = ''
+        addMarkerAndZoom([result[0], result[1]])
     })
+})
+//Zoom in using marker
+function addMarkerAndZoom (coordinates) {
+    new mapboxgl.Marker({
+        draggable: true
+    })
+        .setLngLat(coordinates)
+        .addTo(map);
+
+    map.flyTo({
+        center: coordinates,
+        zoom: 10,
+        essential: true
+    });
+}
+map.on('click', function (e) {
+    addMarkerAndZoom(e.lngLat);
 })
 
 // Populate city in "Current City"
@@ -58,8 +87,12 @@ const currentCity = document.querySelector('button')
 const cityInput = document.querySelector('input')
 const cityName = document.querySelector('p')
 currentCity.addEventListener('click', () => {
-    const inputValue = cityInput.value
-    cityName.innerHTML = `<p> Current City: ${inputValue}</p>`
+    const city = cityInput.value
+    const firstLetter = city.charAt(0)
+    const firstLetterCap = firstLetter.toUpperCase()
+    const remainingLetters = city.slice(1)
+    const capitalizedInput = firstLetterCap + remainingLetters
+    cityName.innerHTML = `<p> Current City: ${capitalizedInput}</p>`
 })
 
 
