@@ -11,7 +11,7 @@ window.addEventListener("DOMContentLoaded", () => {
             }, (idx + 1) * 200)
         });
         setTimeout(() => {
-            logoSpan.forEach(() => {
+            logoSpan.forEach((span, idx) => {
                 setTimeout(() => {
                     span.classList.remove("active")
                     span.classList.add('fade');
@@ -36,20 +36,6 @@ const map = new mapboxgl.Map({
 });
 map.addControl(new mapboxgl.NavigationControl());
 
-// Creating Marker
-const marker = new mapboxgl.Marker({
-    draggable: true
-})
-    .setLngLat([0, 0]) //************
-    .addTo(map);
-
-function onDragEnd() {
-    const lnglat = marker.gtLngLat();
-    coordinates.style.display = 'block';
-    coordinates.innerHTML = `Longitude: ${lnglat.lng}
-        <br />Latitude: ${lnglat.lat}`;
-}
-marker.on('dragend', onDragEnd)
 
 //Search Function
 document.getElementById("sub").addEventListener('click', function() {
@@ -81,6 +67,21 @@ function addMarkerAndZoom (coordinates) {
 map.on('click', function (e) {
     addMarkerAndZoom(e.lngLat);
 })
+
+// Creating Marker
+const marker = new mapboxgl.Marker({
+    draggable: true
+})
+    .setLngLat([0, 0]) //************
+    .addTo(map);
+
+function onDragEnd() {
+    const lnglat = marker.gtLngLat();
+    coordinates.style.display = 'block';
+    coordinates.innerHTML = `Longitude: ${lnglat.lng}
+        <br />Latitude: ${lnglat.lat}`;
+}
+marker.on('dragend', onDragEnd)
 
 // Populate city in "Current City"
 const currentCity = document.querySelector('button')
@@ -132,14 +133,14 @@ fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}` +
 
             card.innerHTML = `
         <div class="card">
-          <div class="card-body">
-                <p class="weather-icon"><img src="http://openweathermap.org/img/w/${weather.weather[0].icon}.png" /></p>
-                <p class="card-text"><strong>Date</strong>: ${date.toDateString()}</p>
-                <p class="card-text"><strong>Humidity</strong>: ${weather.main.humidity}</p>
-                <p class="card-text"><strong>Temperature</strong>: ${weather.main.temp}</p>
-                <p class="card-text"><strong>Pressure</strong>: ${weather.main.pressure}</p>
-                <p class="card-text"><strong>Wind</strong>: ${weather.wind.speed}</p>
-          </div>
+              <div class="card-body">
+                    <p class="weather-icon"><img src="http://openweathermap.org/img/w/${weather.weather[0].icon}.png" /></p>
+                    <p class="card-text"><strong>Date</strong>: ${date.toDateString()}</p>
+                    <p class="card-text"><strong>Humidity</strong>: ${weather.main.humidity}</p>
+                    <p class="card-text"><strong>Temperature</strong>: ${weather.main.temp}</p>
+                    <p class="card-text"><strong>Pressure</strong>: ${weather.main.pressure}</p>
+                    <p class="card-text"><strong>Wind</strong>: ${weather.wind.speed}</p>
+              </div>
         </div>
       `;
 

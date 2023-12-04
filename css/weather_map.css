@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+/*@keyframes spin {*/
+/*    to {*/
+/*        transform: rotate(360deg);*/
+/*    }*/
+
+/*}*/
+
 .intro {
     position: fixed;
     z-index: 1;
@@ -70,6 +77,19 @@
 .card-body {
     margin: 10px 15px;
 }
+
+/*.spinner {*/
+/*    position: fixed;*/
+/*    margin: 10%;*/
+/*    top: 10em;*/
+/*    right: 30em;*/
+/*    height: 120px;*/
+/*    width: 120px;*/
+/*    border: 6px solid;*/
+/*    border-color: black transparent black transparent;*/
+/*    border-radius: 50%;*/
+/*    animation: spin 1.3s ease infinite;*/
+/*}*/
 
 div.card {
     margin: 10px;
