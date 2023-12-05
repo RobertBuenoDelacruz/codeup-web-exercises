@@ -1,3 +1,5 @@
+'use strict'
+
 export const getBookAndAuthor = async (id) => {
     try {
         // Get the book data
@@ -39,21 +41,6 @@ export const getAllBooksAndAuthors = async () => {
     }
 }
 
-import { getBookAndAuthor, getAllBooksAndAuthors } from './books-api.js';
-
-// async IIFE (Immediately Invoked Function Expression)
-(async () => { // <-- this is our main thread
-
-    const book = await getBookAndAuthor(1);
-    console.log(book);
-
-    const books = await getAllBooksAndAuthors();
-    console.log(books);
-
-
-
-})();
-
 export const createBook = async (book) => {
     try {
         const url = 'http://localhost:3000/books';
@@ -67,6 +54,38 @@ export const createBook = async (book) => {
         const response = await fetch(url, options);
         const newBook = await response.json();
         return newBook;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export const updateBook = async (id, book) => {
+    try {
+        const url = `http://localhost:3000/books/${id}`;
+        const options = {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(book)
+        };
+        const response = await fetch(url, options);
+        const updatedBook = await response.json();
+        return updatedBook;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export const deleteBook = async (id) => {
+    try {
+        const url = `http://localhost:3000/books/${id}`;
+        const options = {
+            method: 'DELETE'
+        };
+        const response = await fetch(url, options);
+        const deletedBook = await response.json();
+        return deletedBook;
     } catch (error) {
         console.error(error);
     }
