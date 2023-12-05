@@ -194,23 +194,33 @@ for (let i = 1; i <= 100; i++) {
 
 //---------- Hacker Rank Warm Up -----------
 
-function diagonalDifference(arr) {
-    // Write your code here
-    const primaryDiag = arr.map ((e, i) => e[i])
-        .reduce((mem, curr) => mem + curr, 0);
-    const secondaryDig = arr
-        .map ((e, i) => {
-            let index = arr.length - i -1;
-            return e[index];
-        })
-        .reduce((mem, curr) => mem + curr, 0);
-    return Math.abs(primaryDiag - secondaryDig)
+// function diagonalDifference(arr) {
+//     // Write your code here
+//     const primaryDiag = arr.map ((e, i) => e[i])
+//         .reduce((mem, curr) => mem + curr, 0);
+//     const secondaryDig = arr
+//         .map ((e, i) => {
+//             let index = arr.length - i -1;
+//             return e[index];
+//         })
+//         .reduce((mem, curr) => mem + curr, 0);
+//     return Math.abs(primaryDiag - secondaryDig)
+// }
+//
+// console.log(diagonalDifference([
+//                                       [ 11, 2, 4 ],
+//                                       [ 4, 5, 6 ],
+//                                       [ 10, 8, -12 ]
+//                                     ]))
+
+//---------- Hacker Rank Warm Up -----------
+let ar = [1000000001, 1000000002, 1000000003, 1000000004, 1000000005]
+function aVeryBigSum(ar) {
+    let sum = 0;
+    for (let i= 0; i < ar.length; i++){
+        sum += ar[i];
+    }
+    return sum;
 }
 
-console.log(diagonalDifference([
-                                      [ 11, 2, 4 ],
-                                      [ 4, 5, 6 ],
-                                      [ 10, 8, -12 ]
-                                    ]))
-
-
+console.log(aVeryBigSum(ar))
