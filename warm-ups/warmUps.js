@@ -224,3 +224,25 @@ function aVeryBigSum(ar) {
 }
 
 console.log(aVeryBigSum(ar))
+
+//---------- Hacker Rank Warm Up -----------
+
+
+function birthdayCakeCandles(candles) {
+    const maxHeight = Math.max(...candles);
+    return candles.filter(height => height === maxHeight).length;
+}
+
+let candles = [3,2,1,3]
+let result = birthdayCakeCandles(candles)
+console.log(result)
+
+//---------- Hacker Rank Warm Up -----------
+// function pageCount(n, p) {
+//     // Write your code here
+//     let fromFront = Math.floor(p / 2);
+//     let fromBack = Math.floor((n - p) / 2);
+//     return Math.min(fromFront, fromBack);
+// }
+
+

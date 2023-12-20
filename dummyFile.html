@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loading Page Example</title>
+  <style>
+    /* CSS for the loading animation */
+    .loader {
+      border: 8px solid #f3f3f3;
+      border-top: 8px solid #3498db;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin: 20% auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+<div id="loader" class="loader"></div>
+<div id="content" style="display: none;">
+  <!-- Display fetched data here -->
+</div>
+
+<script>
+  // JavaScript code
+  const loader = document.getElementById('loader');
+  const content = document.getElementById('content');
+
+  // Function to fetch data from the RESTful API
+  function fetchData() {
+    // Show loader while fetching data
+    loader.style.display = 'block';
+    content.style.display = 'none';
+
+    // Replace this URL with your RESTful API endpoint
+    fetch('https://api.example.com/data')
+            .then(response => response.json())
+            .then(data => {
+              // Hide loader when data is fetched
+              loader.style.display = 'none';
+              content.style.display = 'block';
+
+              // Manipulate 'content' div to display fetched data
+              content.innerHTML = JSON.stringify(data);
+            })
+            .catch(error => {
+              console.error('Error fetching data:', error);
+              // Handle errors here
+            });
+  }
+
+  // Call fetchData function when the page loads
+  fetchData();
+</script>
+</body>
+</html>

@@ -20,29 +20,65 @@
 //
 // console.log(tellFortune(3, 'Julie', 'London', 'Web Developer'))
 //
-// //The Puppy Age Calculator
+//The Puppy Age Calculator
 // function calculateDogAge(age)  {
 //     let dogYears = 7 * age
 //     console.log("Your dog is " + dogYears + " years old in dog years!")
 // }
 // calculateDogAge(2)
-//-----------Weekly Workouts-----------
-let workOuts = {
-    Monday: "Shoulders and Arms",
-    Tuesday: "Legs",
-    Wednesday: "Chest and Tri",
-    Thursday: "Legs and Shoulders",
-    Friday: "Back and Bi",
-    monday: "Shoulders and Arms",
-    tuesday: "Legs",
-    wednesday: "Chest and Tri",
-    thursday: "Legs and Shoulders",
-    friday: "Back and Bi"
+// -----------Weekly Workouts-----------
+// let workouts = {
+//     Monday: "Shoulders and Arms",
+//     Tuesday: "Legs",
+//     Wednesday: "Chest and Tri",
+//     Thursday: "Legs and Shoulders",
+//     Friday: "Back and Bi",
+//     monday: "Shoulders and Arms",
+//     tuesday: "Legs",
+//     wednesday: "Chest and Tri",
+//     thursday: "Legs and Shoulders",
+//     friday: "Back and Bi"
+// }
+//
+// function weeklyWorkouts(arrDayOfTheWeek) {
+//
+//     return workouts[arrDayOfTheWeek] || "There are no workouts scheduled for today."
+// }
+// let day = "monday";
+// let result = weeklyWorkouts(day);
+// console.log(result);
+
+// Creating a function with a for loop
+
+// let arr = [1,2,3,4,5]
+
+// Hacker Rank Practice
+        // Need more explanation on this
+function cutTheSticks (arr) {
+    let result = [];
+    while(arr.length > 0) {
+        result.push(arr.length);
+        let minStick = Math.min(...arr);
+        arr = arr.filter(stick => stick > minStick).map(stick => stick - minStick);
+    }
+    return result;
 }
 
-function weeklyWorkouts(arrDayOfTheWeek) {
-    return workOuts[arrDayOfTheWeek] || "There are no workouts scheduled for today."
-}
-let day = "sunday";
-let result = weeklyWorkouts(day);
-console.log(result);
+console.log(cutTheSticks([5, 6, 7]))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

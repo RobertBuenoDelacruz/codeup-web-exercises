@@ -1,0 +1,174 @@
+/*Rotating Card*/
+.wrapper, .single-card {
+    height: 450px;
+    max-width: 300px;
+    margin: auto;
+    position: relative;
+}
+
+.wrapper {
+    perspective: 900px;
+}
+.single-card {
+    text-align: center;
+    transition: all 1.5s cubic-bezier(0.7, -.5, 0.3, 1.8);
+    transform-style: preserve-3d;
+}
+
+.wrapper:hover .single-card {
+    transform: rotateY(180deg);
+}
+.front, .back {
+    width: 300px;
+    position: relative;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+}
+.front-one {
+    cursor: pointer;
+    height: 100%;
+    background-image: url(https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg);
+    backface-visibility: hidden;
+    border-radius: 50px;
+    background-size: cover;
+    background-position: center center;
+}
+.front-two {
+    cursor: pointer;
+    height: 100%;
+    background-image: url(https://m.media-amazon.com/images/M/MV5BYzdiOTVjZmQtNjAyNy00YjA2LTk5ZTAtNmJkMGQ5N2RmNjUxXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg);
+    backface-visibility: hidden;
+    border-radius: 50px;
+    background-size: cover;
+    background-position: center center;
+}
+.front-three {
+    cursor: pointer;
+    height: 100%;
+    background-image: url(https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg);
+    backface-visibility: hidden;
+    border-radius: 50px;
+    background-size: cover;
+    background-position: center center;
+}
+.back-one {
+    transform: rotateY(180deg);
+    position: absolute;
+    border-radius: 50px;
+    height: 450px;
+    background: whitesmoke;
+}
+.back-two {
+    transform: rotateY(180deg);
+    position: absolute;
+    border-radius: 50px;
+    height: 450px;
+    background: whitesmoke;
+}
+.back-three {
+    transform: rotateY(180deg);
+    position: absolute;
+    border-radius: 50px;
+    height: 450px;
+    background: whitesmoke;
+}
+.content {
+    padding-top: 25%;
+}
+.content h2 {
+    font-size: 35px;
+    margin: 0;
+    font-weight: 300;
+}
+.content h4 {
+    margin: 0;
+}
+.socials {
+    margin-top: 20%;
+}
+.socials i {
+    font-size: 30px;
+    margin: 0 10px;
+}
+/*End rotating card*/
+body {
+    background-color:#1e1e26;
+}
+.top-three {
+    font-family: "The Augusta", sans-serif;
+    font-size: 35px;
+    padding: 10px;
+    color: #D77258;
+}
+
+.movie1 {
+    box-shadow: 10px 10px 5px black;
+    margin-bottom: 30px;
+
+}
+.movie2 {
+    box-shadow: 10px 10px 5px black;
+    margin-bottom: 30px;
+}
+.movie3 {
+    box-shadow: 10px 10px 5px black;
+    margin-bottom: 30px;
+}
+.navbar-brand {
+    padding: 0;
+    margin: 0;
+    width: 50%;
+    height: 50%;
+    font-size: 55px !important;
+    font-family: "The Augusta", sans-serif;
+    color: #D77258 !important;
+}
+
+#movieInput {
+    padding: 0;
+    margin: 0;
+}
+.mypopcorn {
+    padding:20px;
+}
+
+.popcorn{
+    margin: auto;
+    position: absolute;
+    width:300px;
+    top: 30%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+circle#popcrncirlce {
+    fill: #FFE477;
+    transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    -webkit-animation: rotate 1.5s cubic-bezier(.49,.05,.32,1.04) infinite alternate;
+    animation: rotate 1.5s cubic-bezier(.49,.05,.32,1.04) infinite alternate;
+}
+
+
+
+@-webkit-keyframes rotate {
+    50% {
+        -webkit-transform: translate(0px, 100px);
+    }
+}
+
+@keyframes rotate {
+    50% {
+        transform: translate(0px, 100px);
+    }
+}
+
+.movie-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+}
+
+rd*/
