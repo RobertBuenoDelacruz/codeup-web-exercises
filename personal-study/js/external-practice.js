@@ -54,17 +54,26 @@
 
 // Hacker Rank Practice
         // Need more explanation on this
-function cutTheSticks (arr) {
-    let result = [];
-    while(arr.length > 0) {
-        result.push(arr.length);
-        let minStick = Math.min(...arr);
-        arr = arr.filter(stick => stick > minStick).map(stick => stick - minStick);
-    }
-    return result;
-}
+// function cutTheSticks (arr) {
+//     let result = [];
+//     while(arr.length > 0) {
+//         result.push(arr.length);
+//         let minStick = Math.min(...arr);
+//         arr = arr.filter(stick => stick > minStick).map(stick => stick - minStick);
+//     }
+//     return result;
+// }
+//
+// console.log(cutTheSticks([5, 6, 7]))
 
-console.log(cutTheSticks([5, 6, 7]))
+let numbers = [1, 4, -6, 0]
+let filtered = numbers.filter(function(value) {
+    return value <= 0;
+});
+
+console.log(filtered)
+
+console.log("Hello World")
 
 
 
